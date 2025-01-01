@@ -13,39 +13,39 @@ const NavBar = () => {
   ];
   return (
     <>
-      <div className="">
+      <div className="opacity-90">
         <div className="border-b-2 p-3">
           <div className="container ">
             <div className="flex justify-between items-center">
               <div className="brand-logo">
-                <h3 className="text-xl font-bold">hr-flickfetch</h3>
+                <h3 className="text-xl font-bold text-white">hr-flickfetch</h3>
               </div>
 
               <div className=" md:flex hidden items-center gap-3">
                 {Links.map(({ name, url }, i) => (
                   <div className="" key={i}>
-                    <NavLink to={url} className={({isActive})=>isActive?"text-red-700":"text-black"}>{name}</NavLink>
+                    <NavLink to={url} className={({isActive})=>isActive?"text-red-500 font-bold transition-all duration-300":"text-white hover:text-red-500 transition-all duration-300 "}  >{name}</NavLink>
                   </div>
                 ))}
               </div>
 
               <div className="md:hidden block ">
                 {isOpen ? (
-                  <FaX onClick={() => setIsOpen(false)} />
+                  <FaX className="text-white  transition-transform duration-300 transform hover:rotate-90" onClick={() => setIsOpen(false)} />
                 ) : (
-                  <FaBars onClick={() => setIsOpen(true)} />
+                  <FaBars className="text-white transition-transform duration-300 transform hover:scale-110"  onClick={() => setIsOpen(true)} />
                 )}
               </div>
              
             </div>
             <div
                 className={`${
-                  isOpen ? "flex" : "hidden"
+                  isOpen ? "flex animate-slide-in" : "hidden animate-slide-in"
                 } md:hidden flex-col mt-3  gap-3`}
               >
                 {Links.map(({ name, url }, i) => (
                   <div className="" key={i}>
-                    <NavLink to={url} className={({isActive})=>isActive?"text-red-500":"text-black"}>{name}</NavLink>
+                    <NavLink to={url} className={({isActive})=>isActive?"text-red-500 font-bold transition-all duration-300":"text-white hover:text-red-500 transition-all duration-300"}>{name}</NavLink>
                   </div>
                 ))}
               </div>
