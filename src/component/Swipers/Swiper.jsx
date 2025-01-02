@@ -12,7 +12,7 @@ import SwiperCard from './SwiperCard';
 
 export default () => {
   return (
-    <div className="relative">
+    <div className="relative my-12 bg-black">
 
   
     <Swiper

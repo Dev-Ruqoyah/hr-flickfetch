@@ -4,6 +4,7 @@ import HeroSection from "./Hero";
 import Hero from "../../assets/images/hero.jpg";
 import Swiper from "../../component/Swipers/Swiper";
 import SubNavBar from "../../component/NavBar/SubNavBar";
+import Why from "./Why";
 const Home = () => {
   return (
     <>
@@ -20,9 +21,15 @@ const Home = () => {
         <NavBar />
         <HeroSection />
       </div>
-      <div className="bg-black h-[80vh] py-20">
+      <div className="bg-black h-[80vh] py-20 container">
         <SubNavBar subNav={"Trending Now"} />
         <Swiper />
+      </div>
+      <div className="bg-black h-[80vh]">
+        <SubNavBar subNav={"Why flickfetch"} />
+        <div className="">
+          <Why />
+        </div>
       </div>
     </>
   );
