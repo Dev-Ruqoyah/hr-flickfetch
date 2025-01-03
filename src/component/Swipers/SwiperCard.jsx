@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 const SwiperCard = ({image,title,date,star,det}) => {
     return ( 
         <>
-            <div className="container mx-auto " onClick={det}>
+            <div className="container mx-auto md:w-[250px] w-[300px] " onClick={det}>
                 <div className="h-[290px]  duration-300  border-2 border-red-500 rounded-md hover:scale-105 transition-all  bg-black m-4 mb-0">
                     <img src={image} alt="" className="h-[100%] w-[100%]  object-center  " />
                 </div>

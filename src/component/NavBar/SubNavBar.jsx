@@ -1,7 +1,7 @@
 const SubNavBar = ({subNav}) => {
     return (
         <>
-            <div className="text-2xl font-bold text-white px-4">{subNav}</div>
+            <div className="text-2xl px-6 font-bold text-white ">{subNav}</div>
         </>
       );
 }

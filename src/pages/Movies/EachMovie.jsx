@@ -3,10 +3,13 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import NavBar from "../../component/NavBar/NavBar";
 import HeroButton from "../../component/Buttons/HeroButton";
+import Carousel from "../../component/Swipers/Swiper";
+import SubNavBar from "../../component/NavBar/SubNavBar";
 
 const MoviePage = () => {
   const [movie, setMovie] = useState(null);
   const [trailerUrl, setTrailerUrl] = useState(null);
+  const [related,setRelated] = useState([])
   let { id } = useParams();
 
   useEffect(() => {
@@ -21,7 +24,20 @@ const MoviePage = () => {
           }
         );
         setMovie(data);
+        // console.log(data);
 
+        
+          const relatedData = await axios.get(`https://api.themoviedb.org/3/movie/${id}/similar`,{
+            params:{
+              api_key: "5f7eda380c1a398c55e16a580e4395dd",
+          
+            }
+          })
+          console.log(relatedData.data.results);
+          setRelated(relatedData.data.results)
+          
+        
+        
         // Fetch trailer
         const videoData = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}/videos`,
@@ -96,10 +112,9 @@ const MoviePage = () => {
           <p className="text-white">{movie.overview}</p>
           <div className="flex gap-3 mt-3">
             {movie.genres.map((gen, id) => (
-              <p key={id} className="text-rose-600  ">
+              <div key={id} className="text-rose-600  ">
                 <div className="bg-white px-4 rounded-md"> {gen.name}</div>
-               
-              </p>
+              </div>
             ))}
           </div>
 
@@ -109,6 +124,11 @@ const MoviePage = () => {
             </Link>
           </div>
         </div>
+      </div>
+
+      <div className="related py-12 ">
+        <SubNavBar subNav={"You might also like"}/>
+            <Carousel dataa={related}/>
       </div>
     </div>
   );

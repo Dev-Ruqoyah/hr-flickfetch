@@ -6,6 +6,7 @@ import Swiper from "../../component/Swipers/Swiper";
 import SubNavBar from "../../component/NavBar/SubNavBar";
 import Why from "./Why";
 import Fetchmovie from "../../component/Fetcher/Fetch";
+import FetchPopular from "../../component/Fetcher/PopularFetch";
 const Home = () => {
   return (
     <>
@@ -23,7 +24,7 @@ const Home = () => {
         <HeroSection />
       </div>
       <div className="bg-black py-16">
-        <div className="container mx-auto py-24">
+        <div className="container mx-auto">
           <SubNavBar subNav={"Trending Now"} />
           <Fetchmovie />
         </div>
@@ -33,6 +34,14 @@ const Home = () => {
           <SubNavBar subNav={"Why flickfetch"} />
 
           <Why />
+        </div>
+      </div>
+
+      <div className="bg-black py-16">
+        <div className="container mx-auto">
+          <SubNavBar subNav={"Top Rated"} />
+
+          <FetchPopular />
         </div>
       </div>
     </>

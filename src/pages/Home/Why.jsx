@@ -3,9 +3,12 @@ import WhyCard from "../../component/Cards/WhyCard";
 const Why = () => {
   return (
     <>
-      <div className="container mx-auto mt-5  relative">
+      <div className="container mx-auto mt-5   relative ">
         <div className="bg-white h-[300px] w-[300px] rounded-full blur-3xl absolute top-34 right-1/2 "></div>
-        <div className="grid md:grid-cols-4 grid-cols-1 gap-12 ">
+        <div className="flex justify-center ">
+
+     
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-6  ">
           <WhyCard
             title={"Massive Video Library"}
             subtitle={
@@ -30,6 +33,7 @@ const Why = () => {
               "Navigate through our sleek, easy-to-use interface designed for all users."
             }
           />
+        </div>
         </div>
       </div>
     </>
