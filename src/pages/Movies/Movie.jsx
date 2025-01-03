@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Fetchmovie from "../../component/Fetcher/Fetch";
+
 
 const YouTubeVideos = () => {
   const [videos, setVideos] = useState([]);
@@ -41,6 +43,7 @@ const YouTubeVideos = () => {
 
   return (
     <div className="p-4">
+      <Fetchmovie/>
       <h1 className="text-2xl font-bold mb-4">YouTube Videos</h1>
       <input
         type="text"

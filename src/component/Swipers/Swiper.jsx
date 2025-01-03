@@ -50,23 +50,9 @@ export default () => {
       onSlideChange={() => console.log('slide change')}
     >
       <SwiperSlide>
-        <SwiperCard />
+       <Fetchmovie/>
       </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
+     
     </Swiper>
       {/* Custom Navigation Icons */}
       <button className="custom-prev z-50 absolute top-1/2 left-2 -translate-y-1/2 text-white bg-black p-3 rounded-full hover:bg-red-500">
