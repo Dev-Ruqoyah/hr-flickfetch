@@ -7,6 +7,7 @@ import SubNavBar from "../../component/NavBar/SubNavBar";
 import Why from "./Why";
 import Fetchmovie from "../../component/Fetcher/Fetch";
 import FetchPopular from "../../component/Fetcher/PopularFetch";
+import PopularCategory from "../../component/Fetcher/PopularCategory";
 const Home = () => {
   return (
     <>
@@ -42,6 +43,14 @@ const Home = () => {
           <SubNavBar subNav={"Top Rated"} />
 
           <FetchPopular />
+        </div>
+      </div>
+
+      <div className="bg-black py-16">
+        <div className="container mx-auto">
+          <SubNavBar subNav={"Popular Categories"}/> 
+          <PopularCategory/>
+
         </div>
       </div>
     </>

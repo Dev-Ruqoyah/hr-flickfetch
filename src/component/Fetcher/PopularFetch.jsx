@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import "swiper/css/scrollbar";
 import Carousel from "../Swipers/Swiper";
+import Loader from "../Loader/Loader";
 
 const FetchPopular = () => {
   const [dataa, setData] = useState([]); // Initialize as an empty array
@@ -33,6 +34,7 @@ const FetchPopular = () => {
   }, []);
 
   if (error) return <p className="text-red-500 text-center">{error}</p>;
+  if(!dataa) return <Loader/>
 
   return (
     <>

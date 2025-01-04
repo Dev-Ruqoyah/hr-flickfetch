@@ -5,6 +5,7 @@ import NavBar from "../../component/NavBar/NavBar";
 import HeroButton from "../../component/Buttons/HeroButton";
 import Carousel from "../../component/Swipers/Swiper";
 import SubNavBar from "../../component/NavBar/SubNavBar";
+import Loader from "../../component/Loader/Loader";
 
 const MoviePage = () => {
   const [movie, setMovie] = useState(null);
@@ -61,7 +62,9 @@ const MoviePage = () => {
   }, [id]);
 
   if (!movie) {
-    return <div>Loading...</div>;
+    return <div>
+      <Loader/>
+    </div>;
   }
 
   return (
@@ -74,7 +77,7 @@ const MoviePage = () => {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
-          className="h-[70vh] relative"
+          className="h-[90vh] relative"
         >
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <NavBar />
@@ -110,7 +113,7 @@ const MoviePage = () => {
         <div>
           <h6 className="text-white font-bold text-xl my-2">Overview</h6>
           <p className="text-white">{movie.overview}</p>
-          <div className="flex gap-3 mt-3">
+          <div className="flex flex-wrap gap-3 mt-3">
             {movie.genres.map((gen, id) => (
               <div key={id} className="text-rose-600  ">
                 <div className="bg-white px-4 rounded-md"> {gen.name}</div>
