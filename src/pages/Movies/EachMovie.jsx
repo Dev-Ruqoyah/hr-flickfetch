@@ -6,6 +6,7 @@ import HeroButton from "../../component/Buttons/HeroButton";
 import Carousel from "../../component/Swipers/Swiper";
 import SubNavBar from "../../component/NavBar/SubNavBar";
 import Loader from "../../component/Loader/Loader";
+import Footer from "../Home/Footer";
 
 const MoviePage = () => {
   const [movie, setMovie] = useState(null);
@@ -133,6 +134,8 @@ const MoviePage = () => {
         <SubNavBar subNav={"You might also like"}/>
             <Carousel dataa={related}/>
       </div>
+
+      <Footer/>
     </div>
   );
 };

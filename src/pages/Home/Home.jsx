@@ -8,6 +8,7 @@ import Why from "./Why";
 import Fetchmovie from "../../component/Fetcher/Fetch";
 import FetchPopular from "../../component/Fetcher/PopularFetch";
 import PopularCategory from "../../component/Fetcher/PopularCategory";
+import Footer from "./Footer";
 const Home = () => {
   return (
     <>
@@ -53,6 +54,7 @@ const Home = () => {
 
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
