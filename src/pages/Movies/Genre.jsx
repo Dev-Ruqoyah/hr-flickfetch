@@ -62,7 +62,7 @@ const Genre = () => {
             <div className="grid md:grid-cols-4 grid-cols-1">
                 {
                       genreList.map(({title,id,vote_average,release_date,poster_path})=>(
-                        <Link to={`/movie/${title}/${id}`} key={id}>
+                        <Link to={`/genre/${title}/${id}`} key={id}>
                         <SwiperCard
                           title={title}
                           star={vote_average}
