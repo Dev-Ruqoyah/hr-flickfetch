@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import YouTubeVideos from "./pages/Movies/Movie";
 import MoviePage from "./pages/Movies/EachMovie";
 import Genre from "./pages/Movies/Genre";
+import Error from "./pages/Error/Errorpage";
+import Movies from "./pages/Movies/Movie";
 // import 
 const AppRoute = () =>{
     return(
@@ -11,9 +12,10 @@ const AppRoute = () =>{
          
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/movies" element={<YouTubeVideos/>}/>
-                    <Route path="/genre/:genre" element={<Genre/>}/>
+                    <Route path="/movies" element={<Movies/>}/>
+                    <Route path="/genres/:genre" element={<Genre/>}/>
                     <Route path="/movie/:title/:id" element={<MoviePage/>}/>
+                    <Route path="*" element={<Error/>}/>
 
                     
                 </Routes>

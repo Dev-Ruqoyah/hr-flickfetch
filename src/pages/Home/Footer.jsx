@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
       <footer className="bg-gray-900 text-white p-10">
-        <div className="container mx-auto grid md:grid-cols-4 gap-8">
+        <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2  gap-8">
           {/* About Section */}
           <div>
             <h3 className="font-bold text-lg">About FlickFetch</h3>
@@ -28,10 +28,10 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg">Popular Genres</h3>
             <ul className="space-y-2 flex flex-col">
-              <Link to={"/genre/action"} className="text-sm hover:underline"> Action</Link>
-              <Link to={"/genre/comedy"} className="text-sm hover:underline"> Comedy</Link>
-              <Link to={"/genre/horror"} className="text-sm hover:underline"> Horror</Link>
-              <Link to={"/genre/romance"} className="text-sm hover:underline"> Romance</Link>
+              <Link to={"/genres/action"} className="text-sm hover:underline"> Action</Link>
+              <Link to={"/genres/comedy"} className="text-sm hover:underline"> Comedy</Link>
+              <Link to={"/genres/horror"} className="text-sm hover:underline"> Horror</Link>
+              <Link to={"/genres/romance"} className="text-sm hover:underline"> Romance</Link>
              
             </ul>
           </div>
