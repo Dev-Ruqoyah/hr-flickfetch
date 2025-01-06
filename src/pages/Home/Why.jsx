@@ -8,7 +8,7 @@ const Why = () => {
         <div className="flex justify-center ">
 
      
-        <div className="grid md:grid-cols-4 grid-cols-1 gap-6  ">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6  ">
           <WhyCard
             title={"Massive Video Library"}
             subtitle={

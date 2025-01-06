@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import NavBar from "../../component/NavBar/NavBar";
 import SwiperCard from "../../component/Swipers/SwiperCard";
 import Loader from "../../component/Loader/Loader";
+import Footer from "../Home/Footer";
 
 const Series = () => {
-  const [searchTerms, setSearchTerms] = useState("Breaking Bad");
+  const [searchTerms, setSearchTerms] = useState("Blood Sisters");
   const [series, setSeries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pages, setPage] = useState(1);
@@ -17,7 +18,9 @@ const Series = () => {
 
   useEffect(() => {
     const fetchSeries = async () => {
-  
+      if(!searchTerms.trim()){
+        return;
+      }
 
       try {
         const { data: { results, total_pages } } = await axios.get(
@@ -52,13 +55,13 @@ const Series = () => {
 
   return (
     <>
-      <div className="bg-black py-4">
+      <div className="bg-black py-4 lg:h-[100vh] md:h-[62.6vh]">
         <NavBar />
         <div className="flex justify-center items-center py-3">
           <div className="flex items-center bg-white md:w-1/3 w-2/3 px-3 rounded-md">
             <input
               type="text"
-              value={searchTerms}
+            
               onChange={(e) => setSearchTerms(e.target.value)}
               placeholder="Search for a TV series"
               className="p-2 rounded-md bg-transparent w-full border-0 outline-0"
@@ -80,11 +83,12 @@ const Series = () => {
         </div>
 
         <div className="flex justify-center items-center my-3 text-white">
-          <button className="px-3 py-2 bg-gray-800 rounded-md" onClick={handlePage}>
+          {/* <button className="px-3 py-2 bg-gray-800 rounded-md" onClick={handlePage}>
             See more
-          </button>
+          </button> */}
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
