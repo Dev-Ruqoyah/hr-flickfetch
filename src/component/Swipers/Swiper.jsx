@@ -3,6 +3,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useId } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,6 +11,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Carousel = ({ dataa }) => {
+  const rawUniqueId = useId(); // Generate a raw unique ID
+  const sanitizedId = rawUniqueId.replace(/[^a-zA-Z0-9-_]/g, ""); // Sanitize the ID for CSS selectors
+
   return (
     <>
       <div className="relative container mx-auto">
@@ -20,8 +24,8 @@ const Carousel = ({ dataa }) => {
           spaceBetween={30}
           slidesPerView={4} // Default slides per view
           navigation={{
-            nextEl: ".custom-next",
-            prevEl: ".custom-prev",
+            nextEl: `.custom-next-${sanitizedId}`,
+            prevEl: `.custom-prev-${sanitizedId}`,
           }}
           breakpoints={{
             320: {
@@ -58,13 +62,13 @@ const Carousel = ({ dataa }) => {
 
         {/* Custom Navigation Buttons */}
         <button
-          className="custom-prev z-50 absolute top-1/2 left-2 -translate-y-1/2 text-white bg-black p-3 rounded-full hover:bg-red-500"
+          className={`custom-prev-${sanitizedId} z-50 absolute top-1/2 left-2 -translate-y-1/2 text-white bg-black p-3 rounded-full hover:bg-red-500`}
           aria-label="Previous Slide"
         >
           <FaArrowLeft />
         </button>
         <button
-          className="custom-next z-50 absolute top-1/2 right-2 -translate-y-1/2 text-white bg-black p-3 rounded-full hover:bg-red-500"
+          className={`custom-next-${sanitizedId} z-50 absolute top-1/2 right-2 -translate-y-1/2 text-white bg-black p-3 rounded-full hover:bg-red-500`}
           aria-label="Next Slide"
         >
           <FaArrowRight />
