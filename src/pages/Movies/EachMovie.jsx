@@ -11,7 +11,7 @@ import Footer from "../Home/Footer";
 const MoviePage = () => {
   const [movie, setMovie] = useState(null);
   const [trailerUrl, setTrailerUrl] = useState(null);
-  const [related,setRelated] = useState([])
+  const [related, setRelated] = useState([]);
   let { id } = useParams();
 
   useEffect(() => {
@@ -28,24 +28,23 @@ const MoviePage = () => {
         setMovie(data);
         // console.log(data);
 
-        
-          const relatedData = await axios.get(`https://api.themoviedb.org/3/movie/${id}/similar`,{
-            params:{
+        const relatedData = await axios.get(
+          `https://api.themoviedb.org/3/movie/${id}/similar`,
+          {
+            params: {
               api_key: "5f7eda380c1a398c55e16a580e4395dd",
-          
-            }
-          })
-          console.log(relatedData.data.results);
-          setRelated(relatedData.data.results)
-          
-        
-        
+            },
+          }
+        );
+        console.log(relatedData.data.results);
+        setRelated(relatedData.data.results);
+
         // Fetch trailer
         const videoData = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}/videos`,
           {
             params: {
-              api_key: "5f7eda380c1a398c55e16a580e4395dd",
+              api_key: import.meta.env.VITE_API_KEY,
             },
           }
         );
@@ -63,9 +62,11 @@ const MoviePage = () => {
   }, [id]);
 
   if (!movie) {
-    return <div>
-      <Loader/>
-    </div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 
   return (
@@ -131,11 +132,11 @@ const MoviePage = () => {
       </div>
 
       <div className="related py-12 ">
-        <SubNavBar subNav={"You might also like"}/>
-            <Carousel dataa={related}/>
+        <SubNavBar subNav={"You might also like"} />
+        <Carousel dataa={related} />
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };

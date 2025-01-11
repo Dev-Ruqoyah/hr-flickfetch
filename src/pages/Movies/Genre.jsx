@@ -31,7 +31,7 @@ const Genre = () => {
           "https://api.themoviedb.org/3/discover/movie",
           {
             params: {
-              api_key: "5f7eda380c1a398c55e16a580e4395dd",
+              api_key: import.meta.env.VITE_API_KEY,
               with_genres: genreId,
               page: page,
             },

@@ -28,7 +28,7 @@ const Movies = () => {
           "https://api.themoviedb.org/3/search/movie",
           {
             params: {
-              api_key: "5f7eda380c1a398c55e16a580e4395dd",
+              api_key: import.meta.env.VITE_API_KEY,
               query: searchTerms,
               page: pages,
               language: "en-US", // Fixed language format
